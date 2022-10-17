@@ -35,11 +35,13 @@ export default function Favorito() {
               renderItem={({item})=>{
                   return (
                       <TouchableOpacity onPress={()=> {handleFavoriteAthlete(item.id,item.favorite)}}>
-                          <Image source={{uri: item.imageUrl}} style={styles.image}/>
-                          <Text>{item.name}</Text>
-                          <Text>{item.email}</Text>
-                          <Text>{item.phoneNumber}</Text>
-                          <Text>Favorito</Text>
+                        <View style={styles.card}>
+                            <Image source={{uri: item.imageUrl}} style={styles.image}/>
+                            <Text>{item.name}</Text>
+                            <Text>{item.email}</Text>
+                            <Text>{item.phoneNumber}</Text>
+                            <Text>Favorito</Text>
+                        </View>
                       </TouchableOpacity>
                   )
               }}
@@ -51,10 +53,22 @@ export default function Favorito() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 150,
+    padding: 100,
   },
   image: { 
     width: 50,
     height: 50
-  }
+  },
+  card:{
+    backgroundColor: '#d8d8d8',
+    marginBottom: 10,
+    width: '95%',
+    marginLeft: '2.5%',
+    height: 150,
+    borderRadius: 28,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    elevation: 5
+}
 });
