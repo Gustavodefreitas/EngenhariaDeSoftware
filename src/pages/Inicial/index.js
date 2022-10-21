@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, Text, View, FlatList,TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, FlatList,TouchableOpacity,Image } from 'react-native';
 import {firestore} from '../../lib/firebase'
 
 export default function Inicial() {
@@ -36,11 +36,12 @@ export default function Inicial() {
                     return (
                         <TouchableOpacity onPress={()=> {handleFavoriteAthlete(item.id,item.favorite)} }>
                             <View style={styles.card}>
-                                
-                                <Text>{item.name}</Text>
-                                <Text>{item.email}</Text>                               
-                                <Text>{item.phoneNumber}</Text>
-                                <Text>{item.favorite ? 'Favorito' : 'Não favorito'}</Text>
+                                <Image source={{uri: item.imageUrl}} style={styles.image}/>
+                                <Text style={styles.name}>{item.name}</Text>
+                                <Text style={styles.des}>{item.des}</Text>
+                                <Text style={styles.email}>{item.email}</Text>                               
+                                <Text style={styles.phone}>{item.phoneNumber}</Text>
+                                <Text style={styles.fav}>{item.favorite ? 'Favorito' : 'Não favorito'}</Text>
                                 
                             </View>
                         </TouchableOpacity>
@@ -54,21 +55,43 @@ export default function Inicial() {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      padding: 100,
+      padding: 40,
+      paddingVertical: 100,
+      paddingHorizontal: 32,
     },
     card:{
         backgroundColor: '#d8d8d8',
         marginBottom: 10,
-        width: '95%',
-        marginLeft: '2.5%',
+        width: '100%',
         height: 150,
         borderRadius: 28,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
         elevation: 5
     },
     name:{
-       
-    }
-  });
+        marginTop: -140,
+        marginLeft: 123,
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontWeight: 'bold',
+    },
+    email:{
+        marginTop:39,
+        marginLeft:110,       
+    },
+    phone:{
+        marginLeft:110,       
+    },
+    fav:{
+        marginLeft:110,    
+    },
+    des:{
+        marginLeft: 110
+    },
+    image: { 
+        width: 110,
+        height:150,
+        borderRadius: 28,
+      }
+  
+}
+    );
