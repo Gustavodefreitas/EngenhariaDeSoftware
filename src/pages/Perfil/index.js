@@ -24,7 +24,7 @@ export default function Perfil() {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Cadastro de novo usuário</Text>
+            <Text style={styles.title}>Cadastro de atleta</Text>
             <TextInput 
                 style={styles.input}
                 placeholder="Nome"
@@ -62,16 +62,18 @@ export default function Perfil() {
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      padding: 150
+      padding: 110
     },
     title: { 
-        fontSize: 32,
-        marginBottom: 24,
+        fontSize: 15,
+        marginBottom: 20,
+        fontWeight: 'bold',
+        
     },
     input: {
         borderWidth: 2,
-        borderRadius: 8,
-        width: '100%',
+        borderRadius: 10,
+        width: '200%',
         marginBottom: 55,
         height: 50,
         padding: 10,
@@ -81,6 +83,7 @@ export default function Perfil() {
         height: 50,
         width: '100%',
         backgroundColor: 'blue',
+        borderRadius: 10,
         fontSize: 24,
         color: 'white',
         alignItems: 'center',

@@ -69,23 +69,23 @@ export default function Inicial() {
     },
     name:{
         marginTop: -140,
-        marginLeft: 123,
         alignItems: 'center',
         justifyContent: 'center',
         fontWeight: 'bold',
+        textAlign: 'center' 
     },
     email:{
         marginTop:39,
-        marginLeft:110,       
+        marginLeft:120,       
     },
     phone:{
-        marginLeft:110,       
+        marginLeft:120,       
     },
     fav:{
-        marginLeft:110,    
+        marginLeft:120,    
     },
     des:{
-        marginLeft: 110
+        marginLeft: 120
     },
     image: { 
         width: 110,
