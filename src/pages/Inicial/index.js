@@ -56,7 +56,6 @@ export default function Inicial() {
     container: {
       flex: 1,
       padding: 40,
-      paddingVertical: 100,
       paddingHorizontal: 32,
     },
     card:{
