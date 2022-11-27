@@ -9,6 +9,7 @@ export default function Perfil() {
     const [cameraOpen,setCameraOpen] = useState(false);
     const [name,setName] = useState('')
     const [email,setEmail] = useState('')
+    const [des,setDes] = useState('')
     const [phoneNumber,setPhoneNumber] = useState('')
     const [imageUrl,setImageUrl] = useState('')
     let camera = useRef();
@@ -27,6 +28,7 @@ export default function Perfil() {
         await firestore.collection('atletas').add({
             name,
             email,
+            des,
             phoneNumber,
             favorite: false,
             imageUrl
@@ -34,6 +36,7 @@ export default function Perfil() {
 
         setName('')
         setEmail('')
+        setDes
         setPhoneNumber('')
         setImageUrl('')
     }
@@ -134,6 +137,12 @@ export default function Perfil() {
               placeholder="Email"
               value={email}
               onChangeText={setEmail}
+          />
+           <TextInput 
+              style={styles.input} 
+              placeholder="Descrição"
+              value={des}
+              onChangeText={setDes}
           />
           <TextInput 
               style={styles.input} 
