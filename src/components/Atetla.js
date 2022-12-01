@@ -27,12 +27,13 @@ const styles = StyleSheet.create({
   name:{
       marginTop: -140,
       alignItems: 'center',
+      marginLeft:100,  
       justifyContent: 'center',
       fontWeight: 'bold',
       textAlign: 'center' 
   },
   email:{
-      marginTop:39,
+      marginTop:10 ,
       marginLeft:120,       
   },
   phone:{
