@@ -38,6 +38,7 @@ export default function Favorito() {
                         <View style={styles.card}>
                             <Image source={{uri: item.imageUrl}} style={styles.image}/>
                             <Text style={styles.name}>{item.name}</Text >
+                            <Text style={styles.des}>{item.des}</Text >
                             <Text style={styles.email}>{item.email}</Text>
                             <Text style={styles.phone}>{item.phoneNumber}</Text>
                             <Text style={styles.fav}>Favorito</Text>
@@ -66,13 +67,14 @@ const styles = StyleSheet.create({
     },
     name:{
         marginTop: -140,
+        marginLeft: 100,     
         alignItems: 'center',
         justifyContent: 'center',
         fontWeight: 'bold',
         textAlign: 'center' 
     },
     email:{
-        marginTop:39,
+        marginTop:10,
         marginLeft:120,       
     },
     phone:{
